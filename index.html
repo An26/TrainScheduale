@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Train Scheduale</title>
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- bootswatch -->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootswatch.css">
+
+	<!-- local css page -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+</head>
+<body>
+
+<div class="jumbotron">
+  <h1>Lemmme hear that choo choo!!</h1>
+  <p>Train scheduales here!</p>
+  <div id=currentTime>
+  	<h2>Current Time</h2>
+  </div>
+  <div id="currentDate">
+  	<h2>Current Date</h2>
+  </div>
+
+</div>
+
+<div id="scheduleDiv">
+	<table class="table table-hover" id="trainScheduale">
+	<h3>Current Train Scheduale</h3>
+	<tr id="tableHeader">
+		<th>Train</th>
+		<th>Destination</th>
+		<th>Frequency (mins)</th>
+		<th>Next Arrival</th>
+		<th>Minutes Away</th>
+	</tr>
+	</table>
+</div>
+
+<br>
+
+<div id=addTrain>
+<h3>Add Train</h3>
+<br>
+<form>
+	<div class="form-group">
+		<label for="trainName">Train Name</label>
+		<input type="trainName" class="form-control" id="trainName" placeholder="Trenton Express">
+	</div>
+	<div class="form-group">
+		<label for="destination">Destination</label>
+		<input type="destination" class="form-control" id="trainDestination" placeholder="Trenton">
+	</div>
+	<div class="form-group">
+		<label for="firstTrainTime">First Train Time (HH:MM AM/PM)</label>
+		<input type="firstTrainTime" class="form-control" id="firstTrainTime" placeholder="00:00">
+	</div>
+	<div class="form-group">
+		<label for="frequency">Frequency</label>
+		<input type="frequency" class="form-control" id="trainFrequency" placeholder="45 min">
+	</div>
+	<button type="submit" class="btn btn-default" id="submitTrain">Submit</button>
+</form>
+</div>
+
+<!-- firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+<!-- moment.js cdn -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+<!-- js page -->
+<script type="text/javascript" src="assets/js/app.js"></script>
+
+</body>
+</html>

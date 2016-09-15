@@ -1,0 +1,32 @@
+body {
+	background-color: #E8E3DF;
+	background-image: url(../images/background.jpg);
+	background-position: left;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.jumbotron {
+	padding: 20px;
+	margin: 50px;
+}
+
+#scheduleDiv {
+	border: 5px solid black;
+	padding: 20px;
+	background-color: #fff;
+	margin: 100px;
+}
+
+#addTrain {
+	border: 5px solid black;
+	padding: 20px;
+	background-color: #fff;
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-bottom: 100px;
+}
+
+tr #tableHeader {
+	border: none;
+}

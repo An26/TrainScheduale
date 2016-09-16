@@ -12,18 +12,19 @@
 	<!-- local css page -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-
 </head>
 <body>
 
 <div class="jumbotron">
   <h1>Lemmme hear that choo choo!!</h1>
-  <p>Train scheduales here!</p>
-  <div id=currentTime>
-  	<h2>Current Time</h2>
-  </div>
-  <div id="currentDate">
-  	<h2>Current Date</h2>
+  <p>Train scheduales here! Get your train scheduales heaaarr.</p>
+  <div id="timeBar">
+	  <div id="currentTime">
+	  	<h4>Current Time</h4>
+	  </div>
+	  <div id="currentDate">
+	  	<h4>Current Date</h4>
+	  </div>
   </div>
 
 </div>
@@ -60,7 +61,7 @@
 		<input type="firstTrainTime" class="form-control" id="firstTrainTime" placeholder="00:00">
 	</div>
 	<div class="form-group">
-		<label for="frequency">Frequency</label>
+		<label for="frequency">Frequency (Minutes)</label>
 		<input type="frequency" class="form-control" id="trainFrequency" placeholder="45 min">
 	</div>
 	<button type="submit" class="btn btn-default" id="submitTrain">Submit</button>

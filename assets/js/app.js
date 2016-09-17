@@ -1,9 +1,15 @@
 //showing current date and time on the webpage -- setting up for calculating time
-	var currentTimeView = moment().format('LT');
+	
+//function displayTime() {
+	var currentTimeView = moment().format('LTS');
 	var currentDateView = moment().format('LL');
+
+	//currentTimeView(update, 1000);
 
 	$('#currentTime').append(currentTimeView);
 	$('#currentDate').append(currentDateView);
+//}
+//9/17-----------trying to add time that updates every second/minute
 
 
 // Initialize firebase
@@ -68,24 +74,42 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
 	//Calculating time 
 	//var trainFrequency = 15;
 	//var firstTrainTime = "4:30";
-	var firstTrainTimeConverted = moment(newTime, 'hh:mm').subtract(1, 'years');
-	var diffTime = moment().diff(moment(firstTrainTimeConverted), 'minutes');
-	var timeRemainder = diffTime % newFrequency;
-	var timeMinutesUntilTrain = newFrequency - timeRemainder;
-	var nextTrain = moment().add(timeMinutesUntilTrain, "hh:mm");
-
-	console.log('time: ' + newTime);
+	console.log("current Time: " + currentTimeView);
 	console.log('freq: ' + newFrequency);
 
+	var firstTrainTimeConverted = moment(newTime, 'hh:mm').subtract(1, 'years');
 	console.log("minute values: " + firstTrainTimeConverted);
-	console.log("current Time: " + currentTimeView);
+
+	var diffTime = moment().diff(moment(firstTrainTimeConverted), 'minutes');
 	console.log('difference in minutes: ' + diffTime);
+
+
+	var timeRemainder = diffTime % newFrequency;
 	console.log("time remainder: " + timeRemainder);
+
+	var timeMinutesUntilTrain = newFrequency - timeRemainder;
 	console.log("minutes til train: " + timeMinutesUntilTrain);
-	console.log("arrival time: " + moment(nextTrain).format('LT'));
+
+
+	var nextTrainAdded = moment().add(timeMinutesUntilTrain, 'minutes');
+	console.log("next arrival time in minutes: " + nextTrainAdded);
+	
+	var nextTrain = moment(nextTrainAdded).format('hh:mm');
+
+	console.log('moment: ' + moment());
+	console.log("next arrival time: " + moment(nextTrainAdded).format('LT'));
+	console.log('next train: ' + nextTrain);
 
 	
-	$('#trainScheduale	> tbody').append('<tr><td>' + newTrainName + '</td><td>' + newDestination + '</td><td>' + newFrequency + '</td><td>' + moment(nextTrain).format('LT') + '</td><td>' + timeMinutesUntilTrain + '</td></tr>');
+	
+
+	
+	
+
+	
+
+	
+	$('#trainScheduale	> tbody').append('<tr><td>' + newTrainName + '</td><td>' + newDestination + '</td><td>' + newFrequency + '</td><td>' + nextTrain + '</td><td>' + timeMinutesUntilTrain + '</td></tr>');
 });
 
 
